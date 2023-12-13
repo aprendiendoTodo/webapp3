@@ -29,5 +29,15 @@ exit
 
 editar el php.ini para habilitar pdo
 
+********************************************************
+Migraciones
+
+php artisan make::migration create_post_table
+
+
+
+
+
+
 
 https://stackoverflow.com/questions/29318709/how-can-i-resolve-your-requirements-could-not-be-resolved-to-an-installable-set
