@@ -20,4 +20,10 @@ C:\Users\Marco Julian\webapp3>php artisan make:controller HomeController --invok
 C:\Users\Marco Julian\webapp3>php artisan make:request LoginRequest
 
 
+DB
+php artisan tinker
+
+DB::connection()->getPDO();
+
+
 https://stackoverflow.com/questions/29318709/how-can-i-resolve-your-requirements-could-not-be-resolved-to-an-installable-set
