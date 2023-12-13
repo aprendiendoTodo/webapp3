@@ -25,5 +25,9 @@ php artisan tinker
 
 DB::connection()->getPDO();
 
+exit
+
+editar el php.ini para habilitar pdo
+
 
 https://stackoverflow.com/questions/29318709/how-can-i-resolve-your-requirements-could-not-be-resolved-to-an-installable-set
