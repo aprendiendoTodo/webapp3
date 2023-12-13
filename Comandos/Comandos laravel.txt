@@ -1,0 +1,23 @@
+php artisan --version
+
+Correr app  - run web app
+C:\Users\Marco Julian\example-app2>php artisan serve
+
+Crear Controller
+C:\Users\Marco Julian\webapp3>php artisan make:controller AboutController
+
+
+C:\Users\Marco Julian\webapp3>php artisan route:list
+
+C:\Users\Marco Julian\webapp3>php artisan make:controller BlogController -r
+-r is resource 
+    Muchos mas metodos
+
+C:\Users\Marco Julian\webapp3>php artisan make:controller HomeController --invokable
+    Solo con un metodo
+
+
+C:\Users\Marco Julian\webapp3>php artisan make:request LoginRequest
+
+
+https://stackoverflow.com/questions/29318709/how-can-i-resolve-your-requirements-could-not-be-resolved-to-an-installable-set
