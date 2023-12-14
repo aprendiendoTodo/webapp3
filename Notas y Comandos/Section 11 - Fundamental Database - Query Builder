@@ -1,0 +1,74 @@
+https://laravel.com/docs/10.x/queries
+
+# Query builder
+
+// return DB::table('posts')->get();
+// return DB::table('posts')->find(7);
+// return DB::table('posts')->first();
+// return DB::table('posts')->where('status','=',0)->get();
+// return DB::table('posts')->pluck('title','id');
+// return DB::table('posts')->where('id','>', 10)->where('id', '<',30)->get();
+// return DB::table('posts')->where('status', 0)->get();
+
+
+# Insert
+        DB::table('posts')->insert([
+            [
+            'title'=>'This is a test Data',
+            'description' => 'Lorem ...',
+            'status' => 1,
+            'publish_date' => date('Y-m-d'),
+            'user_id' => 1
+            ],
+            [
+                'title'=>'This is a test Data 2',
+                'description' => 'Lorem ...',
+                'status' => 1,
+                'publish_date' => date('Y-m-d'),
+                'user_id' => 1
+                ],            
+        ]);
+
+            dd('success');
+
+# Update
+
+        DB::table('posts')->where('id', 2)->update([
+            'title' => 'A litle comment updated',
+            'description' => 'Hello this is a new msj for this row'
+        ]);
+
+        dd('success');
+
+# Delete
+        // DB::table('posts')->where('id', 1)->delete();
+        DB::table('posts')->delete(2);
+
+        dd('success');
+
+# Bcasic Join
+        DB::table('posts')
+        ->join('categories', 'posts.category_Id', '=', 'categories.Id')
+        // ->select('categories.*')
+        ->get();
+
+
+------------------
+Creamos otra columna
+
+PS C:\Users\Marco Julian\webapp3> php artisan make:migration add_posts_table --table=posts
+
+change migration file
+
+PS C:\Users\Marco Julian\webapp3> php artisan migrate
+
+
+# Aggregates
+        /**
+         * count()
+         * max()
+         * min()
+         * avg()
+         * sum()
+         */
+        return DB::table('posts')->sum('views');
