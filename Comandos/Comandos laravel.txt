@@ -1,5 +1,8 @@
 php artisan --version
 
+composer create-project laravel/laravel example-app2
+
+
 Correr app  - run web app
 C:\Users\Marco Julian\example-app2>php artisan serve
 
@@ -28,11 +31,48 @@ DB::connection()->getPDO();
 exit
 
 editar el php.ini para habilitar pdo
+C:\Program Files\php-8.3.0\
 
 ********************************************************
 Migraciones
 
-php artisan make::migration create_post_table
+                                  php artisan make:migration create_posts_table
+    Sin errores desde la Terminal del VS Code
+PS C:\Users\Marco Julian\webapp3> php artisan make:migration create_posts_table
+
+    Para migrar
+                php artisan migrate
+
+                php artisan make:migration create_tests_table
+
+    Borrar las tablas
+                php artisan migrate:reset
+
+    rollback
+PS C:\Users\Marco Julian\webapp3> php artisan migrate:rollback
+
+No se deja por archivo
+PS C:\Users\Marco Julian\webapp3> php artisan migrate --path=/database/migrations/2023_12_14_005151_create_test2_table.php
+
+para todos
+PS C:\Users\Marco Julian\webapp3> php artisan migrate --path=/database/*     
+
+delete the datas
+
+Para traer Cambios a las BD 
+todos los datos seran borrados
+PS C:\Users\Marco Julian\webapp3> php artisan migrate:refresh
+
+Para traer Cambios a las BD
+Sin borrar los datos
+PS C:\Users\Marco Julian\webapp3> php artisan make:migration add_posts_table --table=posts
+
+PS C:\Users\Marco Julian\webapp3> php artisan migrate 
+
+Seeding fake datas
+PS C:\Users\Marco Julian\webapp3> php artisan make:seeder PostSeeder
+
+PS C:\Users\Marco Julian\webapp3> php artisan db:seed
 
 
 
