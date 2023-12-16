@@ -1,0 +1,130 @@
+# Hola Marquito
+
+# MVC -> Model
+
+> php artisan make:model Post 
+
+/**
+ * 1. Retriveing all Data
+ * 2. Retriveing single Data
+ * 3. Retriveing a single data or throw error 
+*/
+
+        // return Post::all();    //  DB:table('posts')->get()
+        // return Post::find(3);
+
+        // $post = Post::find(3);
+        // return $post->title;
+
+        // $post = Post::findOrFail(4);
+
+        $posts = Post::all();
+        
+        foreach ($posts as $post) {
+            echo $post->title;
+            echo '<br/>';
+        }
+
+# Where
+        //return Post::where('views', '>=', 200)->where('id', '=', '3')->get();
+        return Post::where('views', '>=', 500)->orWhere('id', '=', '1')->get();
+
+# Inser
+        $post = new Post();
+        
+        $post->title = 'post 4';
+        $post->description = 'this is a test description 4';
+        $post->status = 1;
+        $post->publish_date = date('Y-m-d');
+        $post->user_id = 1;
+        $post->views = 400;
+
+        $post->save();
+
+        dd('success');
+
+# Update
+        $post = Post::find(4);
+        // $post = Post::where('id', 4)->first();
+
+        $post->title='title 4 updated';
+        $post->description='this is a new description';
+        $post->save();
+
+        dd('success');
+
+# Delete
+        // Post::find(3)->delete();
+        Post::findOrFail(3)->delete();
+
+        dd('success');
+
+# Mass Asignment
+       $post = Post::create([
+        'title' => 'this is from mass asignment',
+        'description' => 'this is a description from mass asign',
+        'status' => 1,
+        'publish_date' => date('Y-m-d'),
+        'user_id' => 1,
+        'views' => 500
+       ]);
+
+       dd('success');
+
+
+    // $post = Post::find(5)->update([
+    //     'title' => 'this is a new title, otra vez',
+    //     'description' => ' --*-- '
+    // ]);
+
+    $post = Post::where('status', 1)->update([
+        'status' => 0
+    ]);
+
+# Soft Deleting
+ 
+ PS C:\Users\Marco Julian\webapp3> php artisan make:migration add_posts_table --table posts
+
+chante to the file...
+
+ PS C:\Users\Marco Julian\webapp3> php artisan migrate --path=/database/migrations/2023_12_16_020148_add_posts_table.php
+
+     //     Post::where('id',5)->delete();
+    //    dd('success');
+
+    return Post::all();
+
+
+# Retrieving Deleted Data
+
+return Post::onlyTrashed()->get();
+
+// return Post::find(2)->delete();
+
+return Post::onlyTrashed()->get();
+
+# Restore A Record Or Deleting a Record Permanently
+
+// Post::withTrashed()->find(5)->restore();
+// dd('success');
+// return Post::all();
+
+// Post::withTrashed()->find(2)->forceDelete();
+// dd('success');
+
+    //return Post::onlyTrashed()->get();
+
+    return Post::all();
+
+# Factories
+PS C:\Users\Marco Julian\webapp3> php artisan make:factory PostFactory
+
+...
+DatabaseSeeder file
+
+after command
+
+php artisan db:seed
+
+-- vaciar
+PS C:\Users\Marco Julian\webapp3> php artisan migrate:fresh
