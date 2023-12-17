@@ -1,0 +1,20 @@
+Sección 13: Fundamental: Eloquent Relationship
+
+# One to one Relationship
+
+Crear tabla
+1 PS C:\Users\Marco Julian\webapp3> php artisan make:migration 
+create_addresses_table
+2    chance te file migration before to migrate
+3 PS C:\Users\Marco Julian\webapp3> php artisan migrate
+
+Crear Modelo
+PS C:\Users\Marco Julian\webapp3> php artisan make:model Addresse
+
+# Inverse Relation 
+
+
+# One to Many Relationship
+
+
+# Many to Many Relationship
