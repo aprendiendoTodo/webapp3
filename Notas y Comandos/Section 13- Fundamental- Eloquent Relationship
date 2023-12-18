@@ -11,7 +11,8 @@ create_addresses_table
 Crear Modelo
 PS C:\Users\Marco Julian\webapp3> php artisan make:model Addresse
 
-# Inverse Relation 
+# Inverse Relation
+
 
 
 # One to Many Relationship
