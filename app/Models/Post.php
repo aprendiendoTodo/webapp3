@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory, SoftDeletes;
 
     // Para renombrar
-    // protected $table = 'posts';
+    protected $table = 'posts';
 
     protected $fillable = [
         'title',
@@ -19,10 +19,17 @@ class Post extends Model
         'status',
         'publish_date',
         'user_id',
-        // 'category_id',
+        'category_id',
         'views'
     ];
 
     // protected $guarded = [];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);       // , 'category_id', 'id'
+    }
+
+    
 
 }

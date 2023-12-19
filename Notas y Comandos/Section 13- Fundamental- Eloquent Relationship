@@ -17,5 +17,28 @@ PS C:\Users\Marco Julian\webapp3> php artisan make:model Addresse
 
 # One to Many Relationship
 
+    Creamos tabla
+1 php artisan make:migration create_categories_table
+2 chance the new fila migration
+3 php artisan migrate
+
+    Update table
+1 > php artisan make:migration add_posts_table --table=posts
+2 change migration file
+3 > php artisan migrate
+
+poblar nuevamente con Factory
+
+# Factories
+1 > php artisan make:factory PostFactory
+
+...
+2 change DatabaseSeeder file, after this command
+
+3> php artisan db:seed
+
+Crear model Category
+> php artisan make:model Category  
+
 
 # Many to Many Relationship
