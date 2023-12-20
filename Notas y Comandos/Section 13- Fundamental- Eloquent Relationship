@@ -40,5 +40,13 @@ poblar nuevamente con Factory
 Crear model Category
 > php artisan make:model Category  
 
+rename Posts column 
+> php artisan make:migration rename_posts_column
+change to file 
+> php artisan migrate
+
+    rollback
+php artisan migrate:rollback
+
 
 # Many to Many Relationship

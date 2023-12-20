@@ -10,7 +10,7 @@
                     <h4>{{$item->title}}</h4>
                     <p>{{$item->description}}</p>
                     <p>--*--</p>
-                    <p>{{$item->category->name}}</p>
+                    <p class="btn-sm btn-success">{{$item->category?->name}}</p>
                 </div>
             </div>
         </div>

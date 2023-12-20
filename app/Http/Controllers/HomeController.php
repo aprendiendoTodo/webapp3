@@ -18,6 +18,8 @@ class HomeController extends Controller
     {
         $categories = Category::find(1)->posts;
 
+        // return $categories->categoryProp;
+
         //return $post = Post::find(1)->category;
 
         return view('home', compact('categories'));
