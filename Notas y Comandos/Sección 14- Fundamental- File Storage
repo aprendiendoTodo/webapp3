@@ -15,6 +15,15 @@ FILESYSTEM_DISK=public
 
 # 65 Uploading Files in Storage(part-2)
 
+# Storage Link
+
+> php artisan storage:link
+
+   INFO  The [C:\Users\Marco Julian\webapp3\public\storage] link has been connected to [C:\Users\Marco Julian\webapp3\storage\app/public].  
+
+# Remove Files from Storage
+
+
 
 
 

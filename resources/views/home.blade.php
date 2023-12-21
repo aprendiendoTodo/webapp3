@@ -2,6 +2,7 @@
 
 @section('content')
 <main role="main" class="container">
+    <img src="{{asset('/storage/images/new_image.jpg')}}" alt="">
     <form action="{{route('upload-file')}}" method="POST" enctype="multipart/form-data">
         <form-group>
             @csrf
