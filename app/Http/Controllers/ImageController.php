@@ -8,9 +8,11 @@ class ImageController extends Controller
 {
     function handleImage(Request $request)
     {
+        $request->validate([
+            'image' => ['required', 'min:100', 'max:300', 'mimes:png,jpg,gif'] // 500kb, 'image'
+        ]);
+
         $request->image->storeAs('/images', 'new_image.jpg');
-
-
         
         // return $request->all();
         // dd($request->file('image'));

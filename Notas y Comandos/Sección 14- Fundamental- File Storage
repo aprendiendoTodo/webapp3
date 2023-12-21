@@ -25,7 +25,7 @@ FILESYSTEM_DISK=public
 
 //  3 diferent ways to delete files
 
-
+# Validating Uploaded files (size, type etc)
 
 
 

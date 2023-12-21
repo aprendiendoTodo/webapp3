@@ -19,13 +19,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //  3 diferent ways to delete files
-        // Storage::disk('public')->delete('/images/new_image.jpg');
 
-        // File::delete(storage_path('/app/public/images/3.jpg'));
 
-        // unlink(storage_path('/app/public/images/2.jpg'));
-
-        // return view('home');
+        return view('home');
     }
 }
