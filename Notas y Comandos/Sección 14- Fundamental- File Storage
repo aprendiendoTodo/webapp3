@@ -12,3 +12,9 @@ FILESYSTEM_DISK=local
 FILESYSTEM_DISK=public
 
 >php artisan make:controller ImageController
+
+# 65 Uploading Files in Storage(part-2)
+
+
+
+
