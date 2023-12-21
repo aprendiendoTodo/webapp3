@@ -50,3 +50,19 @@ php artisan migrate:rollback
 
 
 # Many to Many Relationship
+
+    Create model and migration in the same time
+> php artisan make:model Tag -m
+
+
+    create post_tag table
+> php artisan make:migration create_tag_table --create=post_tag
+
+    Finally
+> php artisan migrate
+
+   INFO  Running migrations.  
+
+  2023_12_20_181245_rename_posts_column .................................... 42ms DONE
+  2023_12_20_202550_create_tags_table ...................................... 15ms DONE
+  2023_12_21_003621_create_tag_table ....................................... 11ms DONE

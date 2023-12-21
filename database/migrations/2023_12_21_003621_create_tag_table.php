@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('posts', function(Blueprint $table) {
-        //     $table->renameColumn('category_id', 'categories_id');
-        // });
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->id();
+            $table->integer('post_id');
+            $table->integer('tag_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Schema::table('posts', function(Blueprint $table) {
-        //     $table->renameColumn('categories_id', 'category_id');
-        // });
+        Schema::dropIfExists('post_tag');
     }
 };

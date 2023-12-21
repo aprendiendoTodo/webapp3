@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Addresse;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,12 +17,21 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $categories = Category::find(1)->posts;
+        //  post - may have many tags
+        //  tag - may have many posts   
+        //  pivot table 
 
-        // return $categories->categoryProp;
+        // $post = Post::first();
+        // $tag = Tag::first();
+        // $post->tags()->attach($tag);
 
-        //return $post = Post::find(1)->category;
+        // $post = Post::with('tags')->first();
+        // $tag = Tag::first();
+        // $post->tags()->attach([2,3,4]);
+        // return $post;
 
-        return view('home', compact('categories'));
+        $posts = Post::with('tags')->get();
+
+        return view('home', compact('posts'));
     }
 }

@@ -3,14 +3,18 @@
 @section('content')
 <main role="main" class="container">
     <div class="row mt-5">
-        @foreach ($categories as $item)
+        @foreach ($posts as $post)
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h4>{{$item->title}}</h4>
-                    <p>{{$item->description}}</p>
+                    <h4>{{$post->title}}</h4>
+                    <p>{{$post->description}}</p>
                     <p>--*--</p>
-                    <p class="btn-sm btn-success">{{$item->category?->name}}</p>
+                    <ul>
+                        @foreach ($post->tags as $tag)
+                        <li>{{$tag->name}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
