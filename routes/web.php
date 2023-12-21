@@ -44,6 +44,8 @@ Route::get('/success', function(){
     return '<h1>Successfully upload</h1>';
 })->name('success');
 
+Route::get('/download', [ImageController::class, 'download'])->name('download');
+
 /*
 Route::get('about', function(){
     return "<h1>About page</h1>";

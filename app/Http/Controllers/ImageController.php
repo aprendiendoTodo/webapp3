@@ -22,4 +22,10 @@ class ImageController extends Controller
         // return $request->all();
         // dd($request->file('image'));
     }
+
+    public function download() 
+    {
+        return response()->download(public_path('/storage/images/new_image.jpg'));
+    }
+
 }
