@@ -13,7 +13,12 @@ class ImageController extends Controller
         ]);
 
         $request->image->storeAs('/images', 'new_image.jpg');
-        
+
+        // return redirect()->route('success');        
+        // return redirect()->back();
+        return redirect('/success');
+
+
         // return $request->all();
         // dd($request->file('image'));
     }

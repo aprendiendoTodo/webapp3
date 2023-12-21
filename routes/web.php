@@ -40,6 +40,9 @@ Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.subm
 
 Route::post('upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
 
+Route::get('/success', function(){
+    return '<h1>Successfully upload</h1>';
+})->name('success');
 
 /*
 Route::get('about', function(){
