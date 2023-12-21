@@ -3,5 +3,12 @@ Vas con todo Marquitos
 # File storage introduction
 
 
+# Uploading Files in Storage(part-1)
 
+.env File
 
+FILESYSTEM_DISK=local
+
+FILESYSTEM_DISK=public
+
+>php artisan make:controller ImageController

@@ -17,21 +17,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //  post - may have many tags
-        //  tag - may have many posts   
-        //  pivot table 
 
-        // $post = Post::first();
-        // $tag = Tag::first();
-        // $post->tags()->attach($tag);
-
-        // $post = Post::with('tags')->first();
-        // $tag = Tag::first();
-        // $post->tags()->attach([2,3,4]);
-        // return $post;
-
-        $posts = Post::with('tags')->get();
-
-        return view('home', compact('posts'));
+        return view('home');
     }
 }
